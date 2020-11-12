@@ -36,3 +36,7 @@
     pointer-events: initial;
 }
 
+.btn {
+    cursor: pointer;
+    padding: 0 3rem 0 3rem;
+}

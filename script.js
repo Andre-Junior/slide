@@ -1,4 +1,4 @@
-let time = 9000;
+let time = 7000;
 let imageIndex = 0;
 let imagens = document.querySelectorAll("#slider img");
 let max = imagens.length;
@@ -8,7 +8,7 @@ let sliderPrev = document.querySelector("#slider-prev")
 
 
 
-const classImage = () => {
+const classImageNext = () => {
 
     imagens[imageIndex].classList.remove('active')
 
@@ -20,15 +20,6 @@ const classImage = () => {
 
     imagens[imageIndex].classList.add('active')
 }
-
-const start = () => {
-    setInterval(() => {
-        classImage()
-    }, time)
-}
-
-
-
 
 const prev = () => {
     
@@ -43,7 +34,13 @@ const prev = () => {
     imagens[imageIndex].classList.add('active')
 }
 
+const start = () => {
+ 
+    setInterval(() => {
+        classImageNext()
+    }, time)
+}
 
-sliderNext.addEventListener("click", classImage)
+sliderNext.addEventListener("click", classImageNext)
 sliderPrev.addEventListener("click", prev)
 window.addEventListener('load', start)
